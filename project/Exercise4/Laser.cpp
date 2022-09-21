@@ -8,8 +8,10 @@ Laser::Laser(const sre::Sprite &sprite, float rotation, glm::vec2 position) : Ga
 {
   this->rotation = rotation;
   velocity = glm::vec2(-glm::sin(glm::radians(rotation)) * 600, glm::cos(glm::radians(rotation)) * 600);
+  // I add a bit to the position, so it looks like the shot originates from the front of the space ship
   this->position = position + (velocity * 0.1f);
   winSize = sre::Renderer::instance->getDrawableSize();
+  // Due to me adding a pivot to asteroid.json, I make the redius cover just the head of the laser
   radius = 5;
 }
 
