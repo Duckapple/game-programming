@@ -138,3 +138,6 @@ App_Data/*.mdf
 App_Data/*.ldf
 
 .idea/
+
+_deps/sol2-build
+_deps/sol2-subbuild

@@ -1,4 +1,12 @@
-# SimpleRenderEngine Projects
+# Game Programming
+
+These are my solutions to the exercises in Game Programming, an elective I took on my 3rd semester of Computer Science on the IT University of Copenhagen.
+
+It is based on my [friend Hjalte's fork](https://github.com/Hjaltesorgenfrei/SimpleRenderEngineProject) of [Morten Nobel-Joergensen's SimpleRenderEngineProject](https://github.com/mortennobel/SimpleRenderEngineProject).
+
+the original readme can be seen below.
+
+# Original readme:
 
 This is a fork of SimpleRenderEngine including libraries and bindings to common game development libraries. (This includes SimpleRenderEngine dependencies)
 The goal of this project is be able to get started without spending time on setup.
