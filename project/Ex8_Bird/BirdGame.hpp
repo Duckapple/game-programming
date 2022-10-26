@@ -9,13 +9,15 @@
 
 class PhysicsComponent;
 
-enum class GameState{
+enum class GameState
+{
     Ready,
     Running,
     GameOver
 };
 
-class BirdGame : public b2ContactListener {
+class BirdGame : public b2ContactListener
+{
 public:
     BirdGame();
 
@@ -26,9 +28,10 @@ public:
 
     void EndContact(b2Contact *contact) override;
 
-    static BirdGame* instance;
+    static BirdGame *instance;
 
     void setGameState(GameState newState);
+
 private:
     sre::SDLRenderer r;
 
@@ -43,6 +46,8 @@ private:
 
     void handleContact(b2Contact *contact, bool begin);
 
+    std::function<void(GameObject *)> onDestroy;
+
     std::shared_ptr<SideScrollingCamera> camera;
     std::shared_ptr<sre::SpriteAtlas> spriteAtlas;
 
@@ -51,16 +56,15 @@ private:
     BackgroundComponent background2Component;
 
     void updatePhysics();
-    b2World * world = nullptr;
+    b2World *world = nullptr;
     const float physicsScale = 100;
     void registerPhysicsComponent(PhysicsComponent *r);
     void deregisterPhysicsComponent(PhysicsComponent *r);
-    std::map<b2Fixture*,PhysicsComponent *> physicsComponentLookup;
+    std::map<b2Fixture *, PhysicsComponent *> physicsComponentLookup;
     Box2DDebugDraw debugDraw;
     bool doDebugDraw = false;
     GameState gameState = GameState::Ready;
+    bool cleanup = false;
+    int score = 0;
     friend class PhysicsComponent;
 };
-
-
-
